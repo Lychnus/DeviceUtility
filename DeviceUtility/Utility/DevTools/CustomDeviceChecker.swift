@@ -107,39 +107,39 @@ internal final class CustomDeviceChecker {
 // MARK: - Protocol Conformance
 extension CustomDeviceChecker: DeviceChecker {
     
-    var currentPlatform: DevicePlatform {
+    internal var currentPlatform: DevicePlatform {
         platform
     }
     
-    var isIphone: Bool {
+    internal var isIphone: Bool {
         platform == .iPhone
     }
     
-    var isIpad: Bool {
+    internal var isIpad: Bool {
         platform == .iPad
     }
     
-    var isMac: Bool {
+    internal var isMac: Bool {
         platform == .mac
     }
     
-    var isMacCatalyst: Bool {
+    internal var isMacCatalyst: Bool {
         platform == .macCatalyst
     }
     
-    var isTV: Bool {
+    internal var isTV: Bool {
         platform == .tv
     }
     
-    var isWatch: Bool {
+    internal var isWatch: Bool {
         platform == .watch
     }
     
-    var isVision: Bool {
+    internal var isVision: Bool {
         platform == .vision
     }
     
-    var isSimulator: Bool {
+    internal var isSimulator: Bool {
         #if targetEnvironment(simulator)
         return true
         #else
