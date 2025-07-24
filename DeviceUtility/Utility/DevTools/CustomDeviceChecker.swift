@@ -13,7 +13,7 @@ import UIKit
 public protocol DeviceChecker {
     
     /// The current platform of the running device.
-    var currentPlatform: DevicePlatform { get }
+    var currentPlatform: DeviceCheckerDevicePlatform { get }
     
     /// Returns true if the device is an iPhone.
     var isIphone: Bool { get }
@@ -42,7 +42,7 @@ public protocol DeviceChecker {
 
 // MARK: - Helpers
 /// This enum describes the platform of the current device.
-public enum DevicePlatform: String {
+public enum DeviceCheckerDevicePlatform: String {
     case iPhone
     case iPad
     case macCatalyst
@@ -61,7 +61,7 @@ internal final class CustomDeviceChecker {
     internal static let shared: CustomDeviceChecker = CustomDeviceChecker()
     
     /// Cached platform type for performance.
-    private let platform: DevicePlatform
+    private let platform: DeviceCheckerDevicePlatform
     
     /// Secured initializer to enforce `.shared` usage.
     private init() {
@@ -99,7 +99,7 @@ internal final class CustomDeviceChecker {
     ///
     /// - Parameters:
     ///   - platform: The platform to simulate.
-    private init(platform: DevicePlatform) {
+    private init(platform: DeviceCheckerDevicePlatform) {
         self.platform = platform
     }
 }
@@ -107,7 +107,7 @@ internal final class CustomDeviceChecker {
 // MARK: - Protocol Conformance
 extension CustomDeviceChecker: DeviceChecker {
     
-    internal var currentPlatform: DevicePlatform {
+    internal var currentPlatform: DeviceCheckerDevicePlatform {
         platform
     }
     
@@ -159,7 +159,7 @@ extension CustomDeviceChecker {
     /// - Returns: A fresh `CustomDeviceChecker` instance, separate from the shared singleton.
     ///
     /// Use this method in unit tests.
-    internal static func mock(platform: DevicePlatform) -> CustomDeviceChecker {
+    internal static func mock(platform: DeviceCheckerDevicePlatform) -> CustomDeviceChecker {
         CustomDeviceChecker(platform: platform)
     }
 }

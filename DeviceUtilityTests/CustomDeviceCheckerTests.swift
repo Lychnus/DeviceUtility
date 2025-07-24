@@ -12,18 +12,18 @@ import Testing
 @Suite("CustomDeviceChecker Tests")
 struct CustomDeviceCheckerTests {
     
-    // MARK: - DevicePlatform Tests
+    // MARK: - DeviceCheckerDevicePlatform Tests
 
     @Test("DevicePlatform rawValue returns correct string.")
     func testDevicePlatformRawValue() {
-        #expect(DevicePlatform.iPhone.rawValue == "iPhone")
-        #expect(DevicePlatform.iPad.rawValue == "iPad")
-        #expect(DevicePlatform.macCatalyst.rawValue == "macCatalyst")
-        #expect(DevicePlatform.mac.rawValue == "mac")
-        #expect(DevicePlatform.tv.rawValue == "tv")
-        #expect(DevicePlatform.watch.rawValue == "watch")
-        #expect(DevicePlatform.vision.rawValue == "vision")
-        #expect(DevicePlatform.unknown.rawValue == "unknown")
+        #expect(DeviceCheckerDevicePlatform.iPhone.rawValue == "iPhone")
+        #expect(DeviceCheckerDevicePlatform.iPad.rawValue == "iPad")
+        #expect(DeviceCheckerDevicePlatform.macCatalyst.rawValue == "macCatalyst")
+        #expect(DeviceCheckerDevicePlatform.mac.rawValue == "mac")
+        #expect(DeviceCheckerDevicePlatform.tv.rawValue == "tv")
+        #expect(DeviceCheckerDevicePlatform.watch.rawValue == "watch")
+        #expect(DeviceCheckerDevicePlatform.vision.rawValue == "vision")
+        #expect(DeviceCheckerDevicePlatform.unknown.rawValue == "unknown")
     }
 
     // MARK: - CustomDeviceChecker Tests
